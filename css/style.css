@@ -94,6 +94,11 @@ header {
     border-radius: 10px;
 }
 
+.recipe_images img:hover {
+    transform: scale(1.1); /* Increase the size on hover */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
 .recipe-main {
     display: grid;
     grid-column: 1/-1;
@@ -134,6 +139,7 @@ header {
     animation-name: slidein;
 }
 
+
 @keyframes slidein {
     from {
       margin-left: 100%;
@@ -157,12 +163,20 @@ header {
     border: 2px solid #000;
     border-radius: 10px;
 } 
+
+.travel-gallery img:hover {
+    transform: scale(1.1); /* Increase the size on hover */
+    transition: transform 0.3s ease;
+}
+
 .travel-gallery figcaption {
     text-align: center;
     z-index: 1;
     
 }
-
+p {
+    font-family: 'Merriweather', serif;  
+}
 .pet-main {
     display: grid;
     grid-column: 1/-1;
@@ -194,10 +208,23 @@ header {
     border-radius: 10px;
 } 
 
+.pet-gallery img:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease; 
+}
+
 .pet-list ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
+}
+
+footer {
+    background-image: url('../images/footer.jpeg');
+    background-size: cover;
+    background-position: center center;
+    color: black;
+    padding: 20px;
 }
 
 @keyframes fadein {
@@ -210,6 +237,11 @@ header {
 }
 
 @media screen and (prefers-reduced-motion: reduce){
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
     html{
         scroll-behavior: auto; /* Removes scroll animation */
     }
@@ -221,6 +253,7 @@ header {
   
     /*Turn off parallax*/
     header{
+        
       background-attachment: initial;
     }
 
@@ -382,4 +415,11 @@ header {
         }
       }
      */
+}
+@media only screen and (min-width: 1000px)  {
+    .recipe_images,
+    .travel-gallery,
+    .pet-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
